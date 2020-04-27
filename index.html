@@ -15,7 +15,7 @@
         }
 
         form {
-            background: #000;
+            background: lightgrey;
             padding: 3px;
             position: fixed;
             bottom: 0;
@@ -27,13 +27,15 @@
             padding: 10px;
             width: 90%;
             margin-right: 0.5%;
+            margin-bottom: 15%;
         }
 
         form button {
             width: 9%;
-            background: rgb(130, 224, 255);
+            background: rgb(1, 251, 35);
             border: none;
             padding: 10px;
+    
         }
 
         #messages {
@@ -43,7 +45,8 @@
         }
 
         #messages li {
-            padding: 5px 10px;
+            padding: 1% 5%;
+            /* align-content: center; */
         }
 
         #messages li:nth-child(odd) {
@@ -70,8 +73,9 @@
                 $('#m').val('');
                 return false;
             });
+
             socket.on('chat message', function (msg) {
-                $('#messages').append($('<li>').text(msg));
+                $('#messages').append($('<li>').text("Michael:   " + msg));
             });
         });
     </script>
